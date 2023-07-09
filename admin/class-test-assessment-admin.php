@@ -222,23 +222,4 @@ function render_custom_meta_box($post) {
 		register_taxonomy( 'ta_occupation_type', 'ta_bio_data', $args );
 	}
 
-	function filter_custom_post_type_by_meta_value($query) {
-		if ( is_admin() && current_user_can('subscriber') && in_array ( $query->get('post_type'), array('ta_bio_data') ) ) {
-			// $query->set('meta_key', 'user_id');
-			// $query->set('meta_value', 'your_meta_value');
-		}
-	}
-
-	function restrict_custom_post_type_for_subscribers($query) {
-		if (is_admin() || !$query->is_main_query()) {
-			return;
-		}
-	
-		// Check if the user is a subscriber
-		//if (current_user_can('subscriber') && current_user_can('administrator')) {
-			$allowed_post_types = array('ta_bio_data'); // Replace with your actual custom post type slug
-			$query->set('post_type', $allowed_post_types);
-		//}
-	}
-
 }

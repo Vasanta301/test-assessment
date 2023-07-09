@@ -165,8 +165,6 @@ class Test_Assessment {
 		$this->loader->add_action( 'init', $plugin_admin, 'custom_post_type_registrations');
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_custom_menu');
 		$this->loader->add_action( 'init', $plugin_admin, 'custom_taxonomy_registration');
-		$this->loader->add_action('pre_get_posts', $plugin_admin, 'filter_custom_post_type_by_meta_value');
-		$this->loader->add_action('pre_get_posts', $plugin_admin, 'restrict_custom_post_type_for_subscribers');
 	}
 
 	/**
